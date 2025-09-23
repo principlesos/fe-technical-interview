@@ -1,6 +1,5 @@
-import React from "react";
 import ReactDOM from "react-dom";
-import { App } from "./components/App";
+import App from "./components/App";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 async function renderRoot(): Promise<void> {

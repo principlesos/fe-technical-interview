@@ -1,11 +1,14 @@
 import { useState, FormEvent } from "react";
+import classNames from "classnames";
 import styles from "./TodoInput.module.scss";
 
-export function TodoInput({
+const TodoInput = ({
+  className,
   onAdd,
 }: {
+  className?: string;
   onAdd: (text: string) => void;
-}): JSX.Element {
+}) => {
   const [text, setText] = useState("");
 
   function onSubmit(event: FormEvent<HTMLFormElement>): void {
@@ -15,7 +18,7 @@ export function TodoInput({
   }
 
   return (
-    <form onSubmit={onSubmit} className={styles.form}>
+    <form onSubmit={onSubmit} className={classNames(styles.form, className)}>
       <input
         type="text"
         placeholder="Add a task…"
@@ -29,4 +32,6 @@ export function TodoInput({
       </button>
     </form>
   );
-}
+};
+
+export default TodoInput;

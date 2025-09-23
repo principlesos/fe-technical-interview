@@ -31,7 +31,7 @@ The app will be available at <http://localhost:5173>.
 ### Refactoring
 
 - Replace local app state with React Query using the `/api/todos` endpoint
-- Refactor the `TodoList` component by extracting a `TodoItem` component
+- Refactor the `TodoList` component by extracting a `TodoListItem` component
 
 ### Bugs to Fix
 

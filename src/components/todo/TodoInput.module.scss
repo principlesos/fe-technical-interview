@@ -1,19 +1,19 @@
 .form {
   display: flex;
-  gap: 8px;
-  margin-bottom: 16px;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .input {
   flex: 1;
-  padding: 10px 12px;
-  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
   border: 1px solid #ccc;
 }
 
 .button {
-  padding: 10px 12px;
-  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
   border: 1px solid #ccc;
   background: #f6f6f6;
   cursor: pointer;

@@ -1,7 +1,7 @@
 import type { TodoItem } from "./types";
 import styles from "./TodoList.module.scss";
 
-export function TodoList({
+const TodoList = ({
   items,
   onToggle,
   onRemove,
@@ -9,7 +9,7 @@ export function TodoList({
   items: TodoItem[];
   onToggle: (id: any) => void;
   onRemove: (id: any) => void;
-}): JSX.Element {
+}) => {
   return (
     <ul className={styles.list}>
       {items.map((item) => (
@@ -42,4 +42,6 @@ export function TodoList({
       ))}
     </ul>
   );
-}
+};
+
+export default TodoList;
