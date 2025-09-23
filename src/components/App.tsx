@@ -1,14 +1,15 @@
-import React from "react";
-import { TodoApp } from "./todo/TodoApp";
 import styles from "./App.module.scss";
+import TodoApp from "./todo/TodoApp";
 
-export function App(): JSX.Element {
+const App = () => {
   return (
     <div className={styles.container}>
       <header>
-        <h1 className={styles.headerTitle}>Todo</h1>
+        <h1 className={styles.headerTitle}>ToDo</h1>
       </header>
       <TodoApp />
     </div>
   );
-}
+};
+
+export default App;
