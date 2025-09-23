@@ -1,15 +1,15 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { TodoInput } from "./TodoInput";
 import { TodoList } from "./TodoList";
 import type { TodoItem } from "./types";
 import styles from "./TodoApp.module.scss";
 
 export function TodoApp(): JSX.Element {
-  const [items, setItems] = React.useState<TodoItem[]>([]);
-  const [completedCount, setCompletedCount] = React.useState(0);
+  const [items, setItems] = useState<TodoItem[]>([]);
+  const [completedCount, setCompletedCount] = useState(0);
 
-  React.useEffect(() => {
-    setCompletedCount(items.filter((it) => it.done).length);
+  useEffect(() => {
+    setCompletedCount(items.filter((item) => item.done).length);
   }, []);
 
   function handleAdd(text: string): void {
@@ -22,12 +22,14 @@ export function TodoApp(): JSX.Element {
 
   function handleToggle(id: string): void {
     setItems((prev) =>
-      prev.map((it) => (it.id === id ? { ...it, done: !it.done } : it))
+      prev.map((item) =>
+        item.id === id ? { ...item, done: !item.done } : item
+      )
     );
   }
 
   function handleRemove(id: string): void {
-    setItems((prev) => prev.filter((it) => it.id !== id));
+    setItems((prev) => prev.filter((item) => item.id !== id));
   }
 
   return (

@@ -1,13 +1,14 @@
-import React from "react";
+import { useState, FormEvent } from "react";
 import styles from "./TodoInput.module.scss";
 
-export function TodoInput(props: {
+export function TodoInput({
+  onAdd,
+}: {
   onAdd: (text: string) => void;
 }): JSX.Element {
-  const { onAdd } = props;
-  const [text, setText] = React.useState("");
+  const [text, setText] = useState("");
 
-  function onSubmit(event: React.FormEvent<HTMLFormElement>): void {
+  function onSubmit(event: FormEvent<HTMLFormElement>): void {
     event.preventDefault();
     onAdd(text);
     setText("");

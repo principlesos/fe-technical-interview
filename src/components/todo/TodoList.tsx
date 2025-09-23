@@ -1,14 +1,15 @@
-import React from "react";
 import type { TodoItem } from "./types";
 import styles from "./TodoList.module.scss";
 
-export function TodoList(props: {
+export function TodoList({
+  items,
+  onToggle,
+  onRemove,
+}: {
   items: TodoItem[];
   onToggle: (id: any) => void;
   onRemove: (id: any) => void;
 }): JSX.Element {
-  const { items, onToggle, onRemove } = props;
-
   return (
     <ul className={styles.list}>
       {items.map((item) => (
